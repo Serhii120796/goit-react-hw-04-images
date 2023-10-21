@@ -24,19 +24,12 @@ export const ImageGalleryItem = ({
 }) => {
   const [showModal, setShowModal] = useState(false);
 
-  const openModal = () => {
-    setShowModal(true);
-  };
-
-  const closeModal = () => {
-    setShowModal(false);
-  };
   return (
     <>
-      <SmallImage src={webformatURL} alt={tags} onClick={openModal} />
+      <SmallImage src={webformatURL} alt={tags} onClick={() => setShowModal(true)} />
       <Modal
         isOpen={showModal}
-        onRequestClose={closeModal}
+        onRequestClose={() => setShowModal(false)}
         style={customStyles}
       >
         <Image src={largeImageURL} alt={tags} />
