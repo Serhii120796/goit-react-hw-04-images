@@ -17,7 +17,7 @@ export const App = () => {
   const [page, setPage] = useState(1);
   const [loadMore, setLoadMore] = useState(false);
 
-  const handleSubmit = value => {
+  const handleSubmit = value =>
     setQuery(prevState => {
       if (prevState !== value) {
         setPage(1);
@@ -25,12 +25,8 @@ export const App = () => {
         return value;
       }
     });
-  };
 
-  const handleLoadMore = () => {
-    setPage(page + 1);
-  };
-
+  const handleLoadMore = () => setPage(page + 1);
 
   useEffect(() => {
     if (!query) {
@@ -67,9 +63,9 @@ export const App = () => {
     <Layout>
       <Searchbar onSubmit={handleSubmit} />
       {images.length > 0 && <ImageGallery images={images} />}
-      {(loading && <Loader /> )|| (loadMore && <Button handleClick={handleLoadMore} />)}
+      {(loading && <Loader />) ||
+        (loadMore && <Button handleClick={handleLoadMore} />)}
       {error && <Error />}
-      
     </Layout>
   );
 };
