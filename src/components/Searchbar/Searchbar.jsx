@@ -12,9 +12,7 @@ export const Searchbar = ({ onSubmit }) => (
       }}
     >
       <SearchButton type="submit">
-        <IconContext.Provider
-          value={{ size: '1.8em' }}
-        >
+        <IconContext.Provider value={{ size: '1.8em' }}>
           <AiOutlineSearch />
         </IconContext.Provider>
       </SearchButton>
