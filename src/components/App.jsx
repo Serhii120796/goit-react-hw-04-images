@@ -8,6 +8,8 @@ import { Loader } from './Loader/Loader';
 import { Error } from './Error/Error';
 
 export class App extends Component {
+
+  
   state = {
     images: [],
     loading: false,
