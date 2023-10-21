@@ -28,8 +28,9 @@ export const App = () => {
   };
 
   const handleLoadMore = () => {
-    setPage(prevState => prevState + 1);
+    setPage(page + 1);
   };
+
 
   useEffect(() => {
     if (!query) {
