@@ -29,7 +29,7 @@ export const App = () => {
   const handleLoadMore = () => setPage(page + 1);
 
   useEffect(() => {
-    if (!query) {
+    if (query === "") {
       return;
     }
 
