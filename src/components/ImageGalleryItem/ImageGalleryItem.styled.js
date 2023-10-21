@@ -4,7 +4,7 @@ export const SmallImage = styled.img`
   width: 100%;
   height: 260px;
   object-fit: cover;
-  transition: transform ${p => p.theme.tansition.standart};
+  transition: transform ${p => p.theme.transition.standart};
 
   &:hover {
     transform: scale(1.03);
