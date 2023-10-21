@@ -51,6 +51,8 @@ export const App = () => {
           setLoadMore(true);
         }
       } catch (error) {
+        setImages([]);
+        setLoadMore(false);
         setError(true);
       } finally {
         setLoading(false);
@@ -64,9 +66,9 @@ export const App = () => {
     <Layout>
       <Searchbar onSubmit={handleSubmit} />
       {images.length > 0 && <ImageGallery images={images} />}
-      {loading && <Loader />}
+      {(loading && <Loader /> )|| (loadMore && <Button handleClick={handleLoadMore} />)}
       {error && <Error />}
-      {loadMore && <Button handleClick={handleLoadMore} />}
+      
     </Layout>
   );
 };
