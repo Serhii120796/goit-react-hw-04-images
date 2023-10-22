@@ -17,19 +17,20 @@ export const App = () => {
   const [page, setPage] = useState(1);
   const [loadMore, setLoadMore] = useState(false);
 
-  const handleSubmit = value =>
-    setQuery(prevState => {
-      if (prevState !== value) {
-        setPage(1);
-        setImages([]);
-        return value;
-      }
-    });
+  const handleSubmit = value => {
+    if (value === query) {
+      return;
+    }
+
+    setPage(1);
+    setImages([]);
+    setQuery(value);
+  };
 
   const handleLoadMore = () => setPage(page + 1);
 
   useEffect(() => {
-    if (query === "") {
+    if (query === '') {
       return;
     }
 
